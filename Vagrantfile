@@ -21,8 +21,7 @@ Vagrant.configure("2") do |config|
   # config.vm.network "public_network"
 
   # Folder Settings
-  config.vm.synced_folder "./data", "/var/www/html"
-  # , :nfs { :mount_options => ["dmode=777", "fmode=666"] }
+  config.vm.synced_folder "./scripts", "/opt/scripts"
 
   # Provision Settings
   # config.vm.provision "shell", inline: <<-SHELL
@@ -30,5 +29,5 @@ Vagrant.configure("2") do |config|
   #   apt-get install -y apache2
   # SHELL
 
-  config.vm.provision "shell", path: "bootstrap.sh"
+  # config.vm.provision "shell", path: "bootstrap.sh"
 end
