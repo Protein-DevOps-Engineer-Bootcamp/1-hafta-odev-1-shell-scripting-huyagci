@@ -10,8 +10,11 @@ Vagrant.configure("2") do |config|
 
   # Provider Settings
   config.vm.provider "virtualbox" do |vb|
+    vb.customize ["modifyvm", :id, "--uart1", "0x3F8", "4"]
+    vb.customize ["modifyvm", :id, "--uartmode1", "file", File::NULL]
     vb.memory = 1024
     vb.cpus = 2
+    vb.name = "week-1-assignments-huyagci"
   end
 
   # Network Settings
@@ -21,13 +24,21 @@ Vagrant.configure("2") do |config|
   # config.vm.network "public_network"
 
   # Folder Settings
-  config.vm.synced_folder "./scripts", "/opt/scripts"
+  config.vm.synced_folder "./shared/scripts", "/opt/scripts"
+  config.vm.synced_folder "./shared/backups", "/mnt/backups"
+  config.vm.synced_folder "./shared/logs", "/tmp/logs"
 
   # Provision Settings
-  # config.vm.provision "shell", inline: <<-SHELL
-  #   apt-get update
-  #   apt-get install -y apache2
-  # SHELL
+  config.vm.provision "shell", inline: <<-SHELL
 
+    # Set time zone to UTC+3
+    sudo timedatectl set-timezone Europe/Istanbul
+
+    # Enable NTP and system clock sync
+    sudo timedatectl set-ntp true
+
+    # Set a cron job for backup.sh to be execute on everyday @ 23:05
+    echo '* *     * * *   root    cd /opt/scripts/ ; ./backup.sh >/dev/null 2>&1' >> /etc/crontab
+  SHELL
   # config.vm.provision "shell", path: "bootstrap.sh"
 end
