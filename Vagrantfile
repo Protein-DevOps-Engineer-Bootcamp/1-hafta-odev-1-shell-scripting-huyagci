@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |vb|
     vb.customize ["modifyvm", :id, "--uart1", "0x3F8", "4"]
     vb.customize ["modifyvm", :id, "--uartmode1", "file", File::NULL]
-    vb.memory = 1024
+    vb.memory = 2048
     vb.cpus = 2
     vb.name = "week-1-assignments-huyagci"
   end
@@ -37,8 +37,19 @@ Vagrant.configure("2") do |config|
     # Enable NTP and system clock sync
     sudo timedatectl set-ntp true
 
+    # Update
+    sudo apt update
+
+    # Get ssmtp & mailutils and install them without a prompt
+    sudo apt install ssmtp -y
+    sudo apt install mailutils -y
+
+    # Overwrite existing configs
+    cp /opt/scripts/ssmtp.conf /etc/ssmtp/ssmtp.conf
+
     # Set a cron job for backup.sh to be execute on everyday @ 23:05
     echo '* *     * * *   root    cd /opt/scripts/ ; ./backup.sh >/dev/null 2>&1' >> /etc/crontab
+    echo '* *     * * *   root    cd /opt/scripts/ ; ./disk_usage_alert.sh >/dev/null 2>&1' >> /etc/crontab
   SHELL
   # config.vm.provision "shell", path: "bootstrap.sh"
 end
