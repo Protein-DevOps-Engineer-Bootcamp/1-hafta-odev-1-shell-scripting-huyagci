@@ -1,16 +1,16 @@
 # Protein DevOps Engineer Bootcamp
 
-## First Week Assignments
+## Project of the First Week
 
 **_Built with;_**
 
 [![Linux][#linux]][@linux] [![Bash][#bash]][@bash] [![Git][#git]][@git] [![VirtualBox][#virtualbox]][@virtualbox] [![Vagrant][#vagrant]][@vagrant]
 
-#### :one: **Task**
+#### :one: **Assignment**
 
 > Backup home directories of all existing users in the system as a gzip archive and create an MD5 checksum of the archives every day at 11:05 PM with a log file of the last run time of the script.
 
-#### :two: **Task**
+#### :two: **Assignment**
 
 > Create a script that checks the disk usage of partitions mounted on the root and build a warning system that sends a warning email to the specified user if the threshold is exceeded.
 
@@ -29,7 +29,7 @@
 
 ### :notebook_with_decorative_cover: **Overview**
 
-This repository undertakes two projects developed under the [Patika.dev][@patika] & [Protein][@protein] DevOps Engineer Bootcamp as an assignment. It contains three scripts whose usage is mentioned below. `bootstrap.sh` is an initializer script that sets up the machine as instructed. `backup_home_dirs.sh` and `disk_usage_alert.sh` are the assignment scripts that are coded by the terms of the tasks.
+This repository undertakes two projects developed under the [Patika.dev][@patika] & [Protein][@protein] DevOps Engineer Bootcamp as an assignment. It contains three scripts whose usage is mentioned below. `bootstrap.sh` is an initializer script that sets up the machine as instructed. `backup_home_dirs.sh` and `disk_usage_alert.sh` are the assignment scripts that are coded by the terms of the project.
 
 ### :sparkles: **Features**
 
@@ -69,7 +69,7 @@ This repository undertakes two projects developed under the [Patika.dev][@patika
 1. Download the project files.
 2. Copy all files under the `/shared/scripts/` to your environment.
 3. Execute `bootstrap.sh` first to configure the machine settings.
-4. Run the scripts manually from the directories that are stated [**here**](#open_file_folder-directories).
+4. Run the scripts manually from the directories that are stated [**below**](#open_file_folder-directories).
 
 ### :computer: **Technologies**
 

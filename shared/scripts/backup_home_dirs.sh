@@ -2,12 +2,10 @@
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/scripts
 
 #############################################
-# Script Name   : Backup Home Dirs          #
-# File          : backup.sh                 #
-# Usage         : ./backup.sh               #
-# Description   :                           #
-#                                           #
-# Created       : 26/05/2022 15:24          #
+# Script Name   : Backup Home Directories   #
+# File          : backup_home_dirs.sh       #
+# Usage         : ./backup_home_dirs.sh     #
+# Created       : 26/05/2022                #
 # Author        : Hasan Umut Yagci          #
 # Email         : hasanumutyagci@gmail.com  #
 #############################################

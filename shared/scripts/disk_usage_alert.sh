@@ -5,8 +5,6 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/us
 # Script Name   : Disk Usage Alert          #
 # File          : disk_usage_alert.sh       #
 # Usage         : ./disk_usage_alert.sh     #
-# Description   :                           #
-#                                           #
 # Created       : 28/05/2022                #
 # Author        : Hasan Umut Yagci          #
 # Email         : hasanumutyagci@gmail.com  #
