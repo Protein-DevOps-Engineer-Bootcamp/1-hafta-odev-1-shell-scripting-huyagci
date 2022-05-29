@@ -59,7 +59,7 @@ This repository undertakes two projects developed under the [Patika.dev][@patika
 
 #### _Automated_
 
-1. Download and install Vagrant to your machine from [**here**][@vagrant-download].
+1. Install [VirtualBox][@virtualbox] and [Vagrant][@vagrant-download] to your machine _if you do not have them_.
 2. Clone the project to your machine.
 3. Open your CLI, change directory to project directory, and type `vagrant up`.
 4. All the scripts will start running automatically and perform their commands.
@@ -73,7 +73,7 @@ This repository undertakes two projects developed under the [Patika.dev][@patika
 
 ### :computer: **Technologies**
 
-> - Linux ❤️
+> - Linux :heart:
 > - Bash Scripting
 > - Git SCM
 > - Oracle VM VirtualBox
