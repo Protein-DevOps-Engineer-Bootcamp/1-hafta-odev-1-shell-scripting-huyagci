@@ -32,7 +32,7 @@ THRESHOLD=3
 if [ "$CURRENT" -ge "$THRESHOLD" ]
 then
     # Email headers
-    SUBJECT="Disk Usage Alert!"
+    SUBJECT="Disk Usage Warning!"
     TO="devopsweek1@gmail.com"
 
     # Body message of the email

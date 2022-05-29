@@ -24,7 +24,6 @@ do
     # Return only normal users
     if ((UUID <= 60000 && UUID >= 1000))
     then
-
         # Get usernames and home dirs
         USER=$( awk -F ':' -v UID="${UUID}" '$3==UID {print $1}'  /etc/passwd )
         HOME_DIR=$( awk -F ':' -v UID="${UUID}" '$3==UID {print $6}'  /etc/passwd )
@@ -37,16 +36,8 @@ do
         # Generate a md5 hash of all archives
         md5sum ${ARCHIVE_NAME_FORMAT} > ${ARCHIVE_NAME_FORMAT}.md5.txt
         echo "MD5 created."
-
-        # Checksum
-        md5sum -c --quiet ${ARCHIVE_NAME_FORMAT}.md5.txt
-        echo "File integrity verified."
-
-        # Write only the filename to md5.txt
-        #  | awk -F '/' '{print $1,$4}'
-        echo
     fi
 done
 
-# Last run time
-stat -c '%x' ./backup.sh | awk -F '.' '{print $1}' >> ${LOGS_DEST_DIR/$'\r'/}/${0/'.sh'/}_script_lastrun.log
+# Last runtime log
+stat -c '%x' ./${0}| awk -F '.' '{print $1}' >> ${LOGS_DEST_DIR/$'\r'/}/${0/'.sh'/}_script_lastrun.log
