@@ -83,7 +83,7 @@ This repository undertakes two projects developed under the [Patika.dev][@patika
 
 ```
 Scripts & Configurations : /opt/scripts
-Backup Arcives           : /mnt/backups
+Backup Archives          : /mnt/backups
 MD5 Checksums            : /mnt/backups
 Last Run Log             : /tmp/scripts
 ```
