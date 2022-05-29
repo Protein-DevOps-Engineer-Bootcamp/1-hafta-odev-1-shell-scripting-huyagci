@@ -12,8 +12,8 @@ sudo apt install ssmtp -y
 sudo apt install mailutils -y
 
 # Overwrite existing ssmtp config
-cp /opt/scripts/ssmtp.conf /etc/ssmtp/ssmtp.conf
+sudo cp /opt/scripts/ssmtp.conf /etc/ssmtp/ssmtp.conf
 
 # Set cron jobs for scripts to be executed on specified time frames
-echo '* *     * * *   root    cd /opt/scripts/ ; ./backup_home_dirs.sh >/dev/null 2>&1' >> /etc/crontab
+echo '05 23     * * *   root    cd /opt/scripts/ ; ./backup_home_dirs.sh >/dev/null 2>&1' >> /etc/crontab
 echo '* *     * * *   root    cd /opt/scripts/ ; ./disk_usage_alert.sh >/dev/null 2>&1' >> /etc/crontab

@@ -25,8 +25,8 @@ CURRENT=$(df / | grep / | awk '{print $5}' | sed 's/%//g')
 declare -i TOTAL=100
 REMAINING=$(( $TOTAL - $CURRENT ))
 
-# Set a threshold of critical level (Will be set to 90%)
-THRESHOLD=3
+# Set a threshold of critical level
+THRESHOLD=90
 
 # If current space exceeds threshold level
 if [ "$CURRENT" -ge "$THRESHOLD" ]
